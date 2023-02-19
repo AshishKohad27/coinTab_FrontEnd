@@ -168,8 +168,8 @@ export default function UserDetails() {
                         onChange={(e) => handleChange(e)}
                     >
                         <option value="">Sort Name</option>
-                        <option value="asc">Low to High</option>
-                        <option value="desc">High to Low</option>
+                        <option value="asc">Ascending order</option>
+                        <option value="desc">Descending order</option>
                     </Select>
 
                     <Button onClick={handleReset} p={5} w="200px" bg="blue.200">
