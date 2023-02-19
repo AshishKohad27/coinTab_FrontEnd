@@ -81,18 +81,6 @@ export default function Home() {
                 <Button bg="blue.100" onClick={handleFetch}>
                     Fetch Users
                 </Button>
-                <Button bg="blue.100" >
-                    Fetch Users
-                </Button>
-                <Button bg="blue.100" >
-                    Fetch Users
-                </Button>
-                <Button bg="blue.100" >
-                    Fetch Users
-                </Button>
-                <Button bg="blue.100" >
-                    Fetch Users
-                </Button>
 
                 <Button onClick={onOpen} bg="red.100">
                     Delete Users
