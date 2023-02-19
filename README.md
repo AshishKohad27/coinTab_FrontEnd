@@ -3,7 +3,7 @@
 ## Deployed Link
 
 1.  Backend Link - https://tough-lamb-tutu.cyclic.app/
-1.  Frontend Link - 
+1.  Frontend Link - https://coin-tab-front-end.vercel.app/
 
 <br/>
 <br/>
