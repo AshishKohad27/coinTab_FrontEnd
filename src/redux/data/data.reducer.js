@@ -1,4 +1,14 @@
-import { ADD_DATA_ERROR, ADD_DATA_LOADING, ADD_DATA_SUCCESS, DELETE_DATA_ERROR, DELETE_DATA_LOADING, DELETE_DATA_SUCCESS, GET_DATA_ERROR, GET_DATA_LOADING, GET_DATA_SUCCESS } from "./data.type"
+import {
+    ADD_DATA_ERROR,
+    ADD_DATA_LOADING,
+    ADD_DATA_SUCCESS,
+    DELETE_DATA_ERROR,
+    DELETE_DATA_LOADING,
+    DELETE_DATA_SUCCESS,
+    GET_DATA_ERROR,
+    GET_DATA_LOADING,
+    GET_DATA_SUCCESS,
+} from "./data.type";
 
 const initialState = {
     loading: false,
@@ -9,8 +19,7 @@ const initialState = {
     length: {},
     filter: {},
     list: {},
-}
-
+};
 
 export const dataReducer = (state = initialState, { type, payload }) => {
     switch (type) {
@@ -18,8 +27,8 @@ export const dataReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 loading: true,
-                error: false
-            }
+                error: false,
+            };
         }
         case GET_DATA_SUCCESS: {
             return {
@@ -31,24 +40,23 @@ export const dataReducer = (state = initialState, { type, payload }) => {
                 filter: payload.filter,
                 list: payload.list,
                 message: payload.message,
-
-            }
+            };
         }
         case GET_DATA_ERROR: {
             return {
                 ...state,
                 loading: true,
                 error: false,
-                errorMessage: payload.message
-            }
+                errorMessage: payload.message,
+            };
         }
 
         case ADD_DATA_LOADING: {
             return {
                 ...state,
                 loading: true,
-                error: false
-            }
+                error: false,
+            };
         }
         case ADD_DATA_SUCCESS: {
             return {
@@ -57,41 +65,42 @@ export const dataReducer = (state = initialState, { type, payload }) => {
                 error: false,
                 data: payload.data,
                 message: payload.message,
-            }
+            };
         }
         case ADD_DATA_ERROR: {
             return {
                 ...state,
                 loading: true,
                 error: false,
-                errorMessage: payload.message
-            }
+                errorMessage: payload.message,
+            };
         }
 
         case DELETE_DATA_LOADING: {
             return {
                 ...state,
                 loading: true,
-                error: false
-            }
+                error: false,
+            };
         }
         case DELETE_DATA_SUCCESS: {
             return {
                 ...state,
                 loading: false,
                 error: false,
-                data: payload.data,
+                data: [],
                 message: payload.message,
-            }
+            };
         }
         case DELETE_DATA_ERROR: {
             return {
                 ...state,
                 loading: true,
                 error: false,
-                errorMessage: payload.message
-            }
+                errorMessage: payload.message,
+            };
         }
-        default: return state
+        default:
+            return state;
     }
-}
+};

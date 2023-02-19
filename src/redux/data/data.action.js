@@ -14,7 +14,7 @@ import {
 export const getData = () => async (dispatch) => {
     try {
         dispatch({ type: GET_DATA_LOADING });
-        let res = await axios.get(`http://localhost:7879/data`);
+        let res = await axios.get(`https://tough-lamb-tutu.cyclic.app/data`);
         dispatch({ type: GET_DATA_SUCCESS, payload: res.data });
     } catch (e) {
         console.log("ERROR GET:", e);
@@ -25,24 +25,13 @@ export const getData = () => async (dispatch) => {
 export const getDataFilter =
     ({ gender, page, limit, ageL, ageR, country, name, sortName }) =>
         async (dispatch) => {
-            // console.log('name:', name)
-            console.log(
-                "gender, page, limit, ageL, ageR, country, name:",
-                gender,
-                page,
-                limit,
-                ageL,
-                ageR,
-                country,
-                name
-            );
-            // console.log("page getdata reducer:", page)
             try {
                 dispatch({ type: GET_DATA_LOADING });
                 let res = await axios.get(
-                    `http://localhost:7879/data/filter?gender=${gender || ""}&page=${page || 1
-                    }&limit=${limit || 10}&name=${name || ""}&ageL=${ageL || 100}&ageR=${ageR || 0
-                    }&country=${country || ""}&&sortName=${sortName || ""}`
+                    `https://tough-lamb-tutu.cyclic.app/data/filter?gender=${gender || ""
+                    }&page=${page || 1}&limit=${limit || 10}&name=${name || ""}&ageL=${ageL || 100
+                    }&ageR=${ageR || 0}&country=${country || ""}&&sortName=${sortName || ""
+                    }`
                 );
                 dispatch({ type: GET_DATA_SUCCESS, payload: res.data });
             } catch (e) {
@@ -54,7 +43,7 @@ export const getDataFilter =
 export const addData = () => async (dispatch) => {
     try {
         dispatch({ type: ADD_DATA_LOADING });
-        let res = await axios.post(`http://localhost:7879/data`);
+        let res = await axios.post(`https://tough-lamb-tutu.cyclic.app/data`);
         dispatch({ type: ADD_DATA_SUCCESS, payload: res.data });
     } catch (e) {
         console.log("ERROR GET:", e);
@@ -65,7 +54,7 @@ export const addData = () => async (dispatch) => {
 export const deleteData = () => async (dispatch) => {
     try {
         dispatch({ type: DELETE_DATA_LOADING });
-        let res = await axios.delete(`http://localhost:7879/data`);
+        let res = await axios.delete(`https://tough-lamb-tutu.cyclic.app/data`);
         dispatch({ type: DELETE_DATA_SUCCESS, payload: res.data });
     } catch (e) {
         console.log("ERROR GET:", e);
