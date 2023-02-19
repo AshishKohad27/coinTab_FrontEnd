@@ -60,7 +60,7 @@ export default function Home() {
         setFlag(false);
     }
     return (
-        <Box maxW={"1348px"} h={"550px"}>
+        <Box maxW={"1348px"} h={"550px"} m="auto">
             <Flex
                 maxW={"1348px"}
                 m="auto"
